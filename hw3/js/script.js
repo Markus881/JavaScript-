@@ -5,5 +5,5 @@ var c4 = a4 < b4;
 alert(c4);
 
 if (a4 < b4) {
-    rusult = true;
+    alert('Число  меньше числа !');
 }
