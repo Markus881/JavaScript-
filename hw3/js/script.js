@@ -26,3 +26,7 @@ var a = +prompt('Введіть перше число!', '');
 var b = Number(prompt('Введіть друге число!', ''));
 var c = a < b;
 alert(c);
+
+if (a < b) {
+    rusult = true;
+}
