@@ -22,3 +22,7 @@ true || false && true || false //true
 10 || 0 && 'dog' || '' //10
 (10 || 0) && ('dog' || '') //'dog'
 
+var a = +prompt('Введіть перше число!', '');
+var b = Number(prompt('Введіть друге число!', ''));
+var c = a < b;
+alert(c);
