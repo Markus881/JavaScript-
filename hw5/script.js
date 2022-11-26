@@ -1,27 +1,30 @@
-//Завдання 1
+// //Завдання 1
 
-// Цикл for
+// // Цикл for
 
-for (let b = 0; b < 10; b++) {
-    alert(b);
-  }
+// for (let b = 0; b < 10; b++) {
+//     alert(b);
+//   }
 
-// Цикл while
+// for (let b = 20; b > 10; b--) {
+//     alert(b);
+//   }
 
-let a = 10;
-while (a) { 
-  alert( a );
-  a--;
-}
+// // Цикл while
 
-// Цикл “do…while”
+// let a = 10;
+// while (a) { 
+//   alert( a );
+//   a--;
+// }
 
-let c = 0;
-do {
-  alert( c );
-  c++;
-} while (c < 10);
+// // Цикл “do…while”
 
+// let c = 0;
+// do {
+//   alert( c );
+//   c++;
+// } while (c < 10);
 
 //Завдання 2
 
