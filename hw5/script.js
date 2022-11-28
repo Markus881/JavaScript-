@@ -28,20 +28,20 @@
 
 // //Завдання 2
 
-let $n = 10;
+// let $n = 10;
 
-nextPrime:
+// nextPrime:
 
-for (let $i = 2; $i <= $n; $i++) { 
+// for (let $i = 2; $i <= $n; $i++) { 
 
-  for (let j = 2; j < $i; j++) { 
+//   for (let j = 2; j < $i; j++) { 
 
-    if ($i % j == 0) continue nextPrime; 
+//     if ($i % j == 0) continue nextPrime; 
 
-  }
+//   }
 
-  console.log( $i ); 
-}
+//   console.log( $i ); 
+// }
 
 // ============
 
@@ -49,12 +49,12 @@ let n = 100;
 
 nextPrime:
 
-for (let i = 23; i <= n; i++) { 
+for (let i = 20; i <= n; i++) { 
 
-  for (let j = 23; j < i; j++) { 
+  for (let j = 2; j < i; j++) { 
 
     if (i % j == 0) continue nextPrime; 
-    
+
   }
 
   console.log( i ); 
