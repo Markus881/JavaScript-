@@ -26,18 +26,21 @@
 //   c++;
 // } while (c < 10);
 
-//Завдання 2
+// //Завдання 2
 
 let $n = 10;
 
 nextPrime:
+
 for (let $i = 2; $i <= $n; $i++) { 
 
   for (let j = 2; j < $i; j++) { 
+
     if ($i % j == 0) continue nextPrime; 
+
   }
 
-  alert( $i ); 
+  console.log( $i ); 
 }
 
 // ============
@@ -45,11 +48,14 @@ for (let $i = 2; $i <= $n; $i++) {
 let n = 100;
 
 nextPrime:
-for (let i = 21; i <= n; i++) { 
 
-  for (let j = 21; j < i; j++) { 
+for (let i = 23; i <= n; i++) { 
+
+  for (let j = 23; j < i; j++) { 
+
     if (i % j == 0) continue nextPrime; 
+    
   }
 
-  alert( i ); 
+  console.log( i ); 
 }
