@@ -23,11 +23,11 @@ alert( sum(1, 2) );
 
 // Завдання 3
 
-function exponentiation () {
+function exponentiation (a, b = 2) {
     let num = Number(prompt('Введіть число!', ''));
     alert (num**2);
 }
-exponentiation ();
+exponentiation (a, b = 2);
 
 // Завдання 4
 
