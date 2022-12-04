@@ -65,14 +65,14 @@ console.log(`Ви зареєстровані під ім'ям: ${resName} ${resL
 
 //Завдання 2
 
-//Variant 1
-// function getRndInteger(min, max) {
-//     return Math.floor(Math.random() * (max - min + 1) ) + min;
-//   }
-//   console.log (getRndInteger(0, 10))
+// Variant 1
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+  }
+  console.log (getRndInteger(0, 10))
 
-  //Variant 2
-//   function getRndInteger(min, max) {
-//     return Math.floor(Math.random() * (max - min) ) + min;
-//   }
-//   console.log(getRndInteger(50, 100))
+//   Variant 2
+  function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+  }
+  console.log(getRndInteger(50, 100))
