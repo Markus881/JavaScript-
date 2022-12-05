@@ -1,62 +1,87 @@
 //Завдання 1
 
 
-const upperCaseString = (userString) => {
-    const firstSymbolString = (userString[0]).toUpperCase();
-    const symbolsString = (userString.slice(1)).toLowerCase();
-    return firstSymbolString = symbolsString;
-}
-
-const userRegistrationName = () => {
-    let userName
-    do{
-        userName = prompt("Введіть ваше ім'я:");
-            if(!userName){
-                console.log("Введіть хочаб один рядковий символ")
-            }else{
-                break
+const authorization =() =>{
+    const getUserName=()=>{
+        let isGetUserName = false;
+        let userName;
+        while(!isGetUserName)
+        {
+            userName = prompt('Введіть ваше ім`я:');
+           
+            if ( !userName  || userName.length === 0 ) {
+                    alert('Введіть ваше ім`я:')
+                    continue;
+                } else {
+                    isGetUserName = true
+                }
+    
             }
-    }while(true);
-    const upperCaseName = upperCaseString(userName)
-    return upperCaseName
-};
-
-const userRegistrationLastName = () => {
-    let userLastName
-    do{
-        userLastName = prompt("Введіть ваше прізвище:");
-        if(!userLastName){
-            console.log("Введіть хочаб один рядковий символ")
-        }else{
-            break
+         userName = userName[0].toUpperCase() + userName.slice(1).toLowerCase();
+        return userName;
+    }
+    const resultUserName = getUserName();
+    
+    const getUserLastName=()=>{
+        let isGetUserLastrName = false;
+        let userLastName;
+        while(!isGetUserLastrName)
+        {
+            userLastName = prompt('Введіть Ваше прізвище:');
+           
+            if ( !userLastName || userLastName.length === 0 ) {
+                alert('Введіть Ваше прізвище:')
+                continue;
+            } else {
+                isGetUserLastrName = true
+            }
+    
         }
-    }while(true);
-    const upperCaseLastName = upperCaseString(userLastName)
-    return upperCaseLastName
+        userLastName = userLastName[0].toUpperCase() + userLastName.slice(1).toLowerCase();
+        return userLastName;
+    }
+    const resultUserLastName = getUserLastName();
+
+    const getUserPassword=()=>{
+        let isGetUserPassword = false;
+        let userPassword;
+        while(!isGetUserPassword)
+        {
+            userPassword = prompt('Введіть Ваш пароль:');
+           
+            if ( !userPassword || userPassword.length < 6 ) {
+                alert('Введіть Ваш пароль! \nВалідний пароль - це будь-який рядок довше ніж 6 символів і містить символи різного регістру.')
+                continue;
+            } else {
+                isGetUserPassword = true
+            }
+    
+        }
+          
+        return userPassword;
+    }
+    const resultUserPassword =  getUserPassword();
+    const checkPassword=(userPassword)=>{
+        let number=0;
+        let bigLetter=0;
+        let smallLetter=0;
+        console.log('userPassword', userPassword);
+        for (let i=0; i<=userPassword.length-1; i++){
+            const simvolPassword = userPassword[i];
+            if (!isNaN(simvolPassword)) {number++; 
+            } else{
+                if (simvolPassword === simvolPassword.toUpperCase()) {bigLetter++; } else {smallLetter++}
+            }
+        }
+        if (bigLetter === 0 || smallLetter === 0 || number === 0) {alert('Пароль не валідний')} else{alert('Добро пожаловать!')}
+    
+    }
+    
+    checkPassword(resultUserPassword);
+    alert(`Вітаємо! Ви успішно авторизувались! \nВаше ім'я: ${resultUserName} \nВаше прізвище: ${resultUserLastName} \nВаш пароль: ${resultUserPassword}`);
 }
 
-const userRegistrationPassword = () => {
-    let userPassword
-    do{
-        userPassword = prompt("Придумайте пароль(не менше, ніж 6 символів та в різному регістрі):");
-        if(!userPassword || userPassword.length < 6){
-            console.log("Введіть не менше 6 символів")
-        }else if(!isNaN(userPassword) || userPassword.toLowerCase() === userPassword || (userPassword.toUpperCase() === userPassword)){
-            console.log("Не коректний пароль!")
-        }else{
-            console.log("Регістрація пройшла успішно!")
-            break
-        }
-    }while(true)
-    return userPassword;
-}
-
-const resName = userRegistrationName();
-const resLastName = userRegistrationLastName();
-const resPassword = userRegistrationPassword();
-
-console.log(`Ви зареєстровані під ім'ям: ${resName} ${resLastName}
-Ваш пароль: ${resPassword}`);
+authorization();
 
 
 
@@ -69,10 +94,10 @@ console.log(`Ви зареєстровані під ім'ям: ${resName} ${resL
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
   }
-  console.log (getRndInteger(0, 10))
+  alert(getRndInteger(0, 10))
 
 //   Variant 2
   function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
   }
-  console.log(getRndInteger(50, 100))
+  alert(getRndInteger(50, 100))
