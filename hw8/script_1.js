@@ -1,3 +1,6 @@
+// Example 1
+
+
 const getOccurrencesCount = (arr) => {
 
     let newObj = {};
@@ -29,3 +32,33 @@ const res = getOccurrencesCount([
     ]);
 
 console.log(res);
+
+
+
+
+
+
+
+
+
+// Example 2
+
+// const getOccurrencesCount = (items) => {
+    
+//     const occurrencesCount = {};
+    
+//     for (let elem of items){
+        
+//         if (!occurrencesCount[elem]){
+//             occurrencesCount[elem] = 1
+//         }else{
+//             occurrencesCount[elem] += 1
+//         }
+        
+//     }
+//     return occurrencesCount
+// };
+
+// const showResult = getOccurrencesCount(["a","v","a","b","b","a"]);
+
+// console.log('Кількість входжень: ', showResult);
