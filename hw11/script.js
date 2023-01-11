@@ -19,33 +19,33 @@ const products = [
       },
     ];
 
-//     const createProductCard =(arr) => {
-//       const cardContainer = document.createElement("div");
-//       cardContainer.innerHTML = `
-//         ${arr
-//           .map( (prod) => {
-//             return `
-//               <h3>${prod.name}</h3>
-//               <h4>${prod.brand}</h4>
-//               <ul>
-//                 ${prod.properties
-//                   .map( (prop) => {
-//                     return `
-//                     <li>
-//                       ${prop}
-//                     </li>
-//                     `;
-//                   })
-//                   .join("")}
-//               </ul>
-//             `;
-//           })
-//         .join("")}
-//       `;
-//       document.body.append(cardContainer);
-//     }
+    // const createProductCard =(arr) => {
+    //   const cardContainer = document.createElement("div");
+    //   cardContainer.innerHTML = `
+    //     ${arr
+    //       .map( (prod) => {
+    //         return `
+    //           <h3>${prod.name}</h3>
+    //           <h4>${prod.brand}</h4>
+    //           <ul>
+    //             ${prod.properties
+    //               .map( (prop) => {
+    //                 return `
+    //                 <li>
+    //                   ${prop}
+    //                 </li>
+    //                 `;
+    //               })
+    //               .join("")}
+    //           </ul>
+    //         `;
+    //       })
+    //     .join("")}
+    //   `;
+    //   document.body.append(cardContainer);
+    // }
 
-//     let res = createProductCard(products);
+    // let res = createProductCard(products);
 
 
 
