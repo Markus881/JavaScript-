@@ -1,6 +1,5 @@
 // Homework 17
 
-
 let timeout = 10;
 let interval = null;
 let isActive = false;
