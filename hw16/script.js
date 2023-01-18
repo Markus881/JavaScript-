@@ -1,5 +1,5 @@
 // Homework 16
-
+//1
 const container = document.getElementById("container");
 
 const renderGreeting = () => {
@@ -21,7 +21,7 @@ const renderGreeting = () => {
 renderGreeting();
 
 
-// з розбору:
+//2
 
 // const container = document.getElementById("container");
 
