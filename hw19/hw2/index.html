@@ -4,29 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.css" />
     <title>JavaScript-hw19</title>
   </head>
+
   <body>
     <div class="container" id="container">
+      <div class="lds-spinner preloader" id="preLoader"></div>
+
       <div class="form">
         <form id="form">
           <label for="character" class="input-label"
-            >Введіть ID бажаного персонажа від 1 до 82</label
+            >Введіть потрібний символ персонажа від 1 до 82</label
           >
           <input
-            id="input"
+            id="formInput"
             type="text"
             name="character"
             placeholder="ID персонажа"
           />
-          <button id="btn-submit" class="btn-submit" type="submit">
+          <button id="btn" class="btn-submit" type="submit">
             Отримати персонажа
           </button>
         </form>
-        <span id="error_message"></span>
+        <span id="error"></span>
       </div>
     </div>
-    <script src="main.js"></script>
   </body>
+  <script src="script.js"></script>
 </html>

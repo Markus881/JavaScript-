@@ -6,66 +6,53 @@ body {
   .container {
     position: relative;
     max-width: 600px;
-    margin: 0 auto;
-    box-shadow: 2px 5px 12px rgb(26, 157, 197);
-    padding: 16px;
+    padding: 20px;
   }
   
   .form {
     position: relative;
     max-width: 500px;
-    margin: 0 auto 25px;
     padding: 35px;
-    box-shadow: 2px 2px 5px 1px rgba(34, 60, 80, 0.2);
   }
   
   .input-label {
     display: block;
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
     font-weight: bold;
     margin-bottom: 25px;
   }
   
   .btn-submit {
     padding: 4px 16px;
-    font-size: 18px;
+    font-size: 20px;
     border: none;
     border-radius: 3px;
-    background-color: rgb(52, 182, 110);
-    box-shadow: 2px 2px 2px;
     cursor: pointer;
   }
   
   .btn-submit:hover {
-    color: rgb(30, 19, 192);
-    box-shadow: none;
     transform: translate(2px, 2px);
     cursor: pointer;
   }
   
-  #error_message {
+  #error {
     position: absolute;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     top: 110px;
     left: 35px;
-    color: #f00;
+    color: rgb(100, 0, 0);
   }
   
   .character_name {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-left: 20px;
   }
   
   .films_button {
-    margin-left: 20px;
     margin-bottom: 20px;
     cursor: pointer;
   }
   
   .film_title {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-top: 0;
     margin-left: 20px;
   }
@@ -90,7 +77,7 @@ body {
   }
   
   .lds-spinner div:after {
-    content: " ";
+    content: ' ';
     display: block;
     position: absolute;
     top: 15px;

@@ -1,86 +1,100 @@
-const BASE_URL = "https://swapi.dev/api/people";
-const idForm = document.getElementById("form");
-const input = document.getElementById("input");
-const contChar = document.getElementById("character-container");
+const SWAPI = "https://swapi.dev/api";
 
-const renderFilmsList = (arrFilms) => {
-  let nameFilms = arrFilms.map((film) => film.title);
-  const filmNameCont = document.createElement("div");
-  for (let name of nameFilms) {
-    const filmName = document.createElement("p");
-    filmName.innerText = name;
-    filmName.classList.add("film-text");
-    filmNameCont.append(filmName);
+const container = document.getElementById("container");
+const form = document.getElementById("form");
+const formIn = document.getElementById("formIn");
+const submitButton = document.getElementById("btn");
+const errMessage = document.getElementById("error");
+const preLoader = document.getElementById("preLoader");
+
+const showPreLoader = (show) => {
+  if (show) {
+    preLoader.style.display = "block";
+  } else {
+    preLoader.style.display = "none";
   }
-  contChar.firstElementChild.append(filmNameCont);
 };
 
-const handleButtonFilm = async ({ films }) => {
-  const fetchFilms = films.map((film) => fetch(film));
+const handleSubmit = (event) => {
+  event.preventDefault();
+
+  const charId = Number(formIn.value);
+  errMessage.innerText = "";
+
+  if (charId < 1 || charId > 82 || !charId) {
+    errMessage.innerText = "Неправильне значення!";
+    formIn.value = "";
+    return;
+  }
+  getStats(charId);
+  submitButton.setAttribute("disabled", "");
+  submitButton.classList.remove("btn");
+};
+form.addEventListener("submit", handleSubmit);
+
+const getStats = async (Id) => {
+  showPreLoader(true);
+
   try {
-    const responses = await Promise.all(fetchFilms);
-    const jsonResponses = responses.map((response) => response.json());
-    const result = await Promise.all(jsonResponses);
-    await renderFilmsList(result);
-  } catch {
-    alert("Error");
+    const response = await fetch(`${SWAPI}/people/${Id}`);
+    if (response.status === 200 || response.status === 201) {
+      const charInfo = await response.json();
+      const { name: char_name, films: char_films } = charInfo;
+
+      makeCharCard(char_name, char_films);
+      showPreLoader(false);
+      formIn.value = "";
+    } else {
+      throw new Error(
+        `Неможливо отримати символ із сервера. Статус помилки '${response.status}'`
+      );
+    }
+  } catch (err) {
+    let errorText = err.message;
+    alert(errorText);
+    showPreLoader(false);
   }
 };
 
-const renderCharacterCard = (char) => {
-  const { name } = char;
-  const divChar = document.createElement("div");
-  divChar.classList.add("card");
-  const nameChar = document.createElement("p");
-  nameChar.style.marofnBottom = "15px";
-  nameChar.innerText = name;
-  const bthChar = document.createElement("button");
-  bthChar.classList.add("button");
-  bthChar.innerText = "FILMS";
-  divChar.append(nameChar, bthChar);
-  contChar.append(divChar);
-  bthChar.addEventListener("click", (event) => {
-    if (!event.target.hasAttribute("isActive")) {
-      event.target.setAttribute("isActive", "");
-      handleButtonFilm(char);
-    } else {
-      event.target.removeAttribute("isActive");
-      event.target.nextElementSibling.remove();
-    }
+const makeCharCard = (charName, filmsWithChar) => {
+  const characterName = document.createElement("h3");
+  characterName.innerText = charName;
+  characterName.classList.add("character_name");
+  container.append(characterName);
+
+  const filmBtn = document.createElement("button");
+  filmBtn.innerText = "Фільми за участю";
+  filmBtn.classList.add("films_button");
+  container.append(filmBtn);
+
+  filmBtn.addEventListener("click", () => {
+    getFilmsList(filmsWithChar);
+    filmBtn.setAttribute("disabled", "");
   });
 };
 
-const handleErrors = async (response) => {
-  if (!response.ok) {
-    let { error } = await response.json();
-    throw new Error(response.status);
-  }
-  return response;
-};
+const getFilmsList = async (urls) => {
+  showPreLoader(true);
 
-const getCharacter = async (id) => {
+  const requestFilms = urls.map((url) => fetch(url));
+
   try {
-    const response = await handleErrors(await fetch(`${BASE_URL}/${id}`));
-    const character = await response.json();
-    await renderCharacterCard(character);
-  } catch (error) {
-    if (+error.message == 404) {
-      alert("Нема персонажу з таким id");
-    } else {
-      alert("Error");
-    }
-  }
-};
+    const responses = await Promise.all(requestFilms);
+    const jsonResponses = responses.map((resp) => resp.json());
+    const filmsRes = await Promise.all(jsonResponses);
 
-const handleIdForm = (event) => {
-  event.preventDefault();
-  const { value } = input;
-  if (vatue === "") {
-    alert("Введіть число");
-    return;
-  } else {
-    getCharacter(value);
+    filmsRes.map((film) => {
+      const filmTitle = document.createElement("p");
+      filmTitle.classList.add("film_title");
+      filmTitle.innerText = film.title;
+      container.append(filmTitle);
+      showPreLoader(false);
+    });
+  } catch (err) {
+    let errorText = err.message;
+    console.log(errorText);
+    alert(errorText);
   }
-  contChar.firstElementChild.remove();
-  idForm.addEventListener("submit", handleIdForm);
+  submitButton.removeAttribute("disabled");
+  submitButton.classList.add("btn");
 };
