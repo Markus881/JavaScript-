@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>    
+    <link rel='stylesheet' href='style-board.css'>
+    <link rel='stylesheet' href='style-preloader.css'>
+    <title>JavaScript-hw21</title>
+</head>
+<body>
+    <div class='preloader' id='preloader'>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class='swapi-board' id='swapi-board-container'>
+        <h2 class='swapi-board-title'>SWAPI Board</h2>
+        <form class='swapi-board__form' id='swapi-board-form'>
+        <label class='swapi-board__form-select-label' for='select'>Select type</label>
+        <select class='swapi-board__form-select' name='select' id='swapi-board-select'>
+        <option value='starships'>Starships</option>
+        <option value='vehicles'>Vehicles</option>
+        <option value='planets'>Planets</option>
+        </select>
+        <label class='swapi-board__form-input-label' for='input'>Enter id number</label>
+        <input type='number' class='swapi-board__form-input' name='input' id='swapi-board-input'>
+        <button class='swapi-board__form-button' type='submit' id='swapi-board-button'>Add</button>
+        </form>
+        <hr>
+    </div>
+
+
+
+
+
+    
+    <script src='script.js'></script>
+</body>
+</html>
