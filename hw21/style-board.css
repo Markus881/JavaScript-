@@ -1,0 +1,120 @@
+body {
+    background-color: rgba(224,224,224,1.0);
+}
+.swapi-board__form, .swapi-board-title {
+    max-width: 750px;
+    text-align: center;
+    margin: 0 auto;
+}
+.swapi-board-title {
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+.swapi-board__form-select {
+    background-color: #e0e0e0;
+    padding: 5px 55px 5px 3px;
+    border: transparent;
+    border-radius: 5px;
+    box-shadow:  5px 5px 9px #bebebe, -5px -5px 9px #ffffff;
+    outline: 0;
+    cursor: pointer;
+    margin: 20px;
+    margin-left: 5px;
+    font-size: 16px;
+}
+.swapi-board__form-select-label, .swapi-board__form-input-label {
+    color: rgba(0, 0, 0, 0.542);
+    font-style: italic;
+    margin-right: 5px;
+}
+.swapi-board__form-input {
+    padding: 5px;
+    font-size: 16px;
+    outline: 0;
+    border: transparent;
+    border-radius: 5px;
+    margin: 20px;
+    margin-left: 5px;
+    box-shadow:  -5px -5px 9px #bebebe, 5px 5px 9px #ffffff;
+}
+.swapi-board__form-button {
+    min-width: 130px;
+    min-height: 28px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #313133;
+    background: #7d7d7d;
+    background: linear-gradient(90deg, rgb(213, 213, 213) 0%, rgb(167, 167, 167) 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px rgba(185, 185, 185, 0.64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+}
+.swapi-board__form-button::before {
+    content: '';
+    border-radius: 1000px;
+    min-width: calc(130px + 3px);
+    min-height: calc(28px + 12px);
+    border: 4px solid #0008f0a8;
+    box-shadow: 0 0 60px rgba(94, 94, 94, 0.64);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+}
+.swapi-board__form-button:hover, .swapi-board__form-button:focus {
+    color: #313133;
+    transform: translateY(-6px);
+}
+.swapi-board__form-button:hover::before, .swapi-board__form-button:focus::before {
+    opacity: 1;
+}
+.swapi-board__card-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap:wrap;
+}
+.swapi-board__card-wrapper {
+    position: relative;
+    margin: 20px 30px;
+    width: 280px;
+    border: transparent;
+    border-radius: 10px;
+    padding: 8px;
+    padding-bottom: 18px;
+    border-radius: 20px;
+    background: #e0e0e0;
+    box-shadow:  -25px 25px 50px #bebebe, 25px -25px 50px #ffffff;
+}
+.swapi-board_card-close {
+    display: block;
+    font-size: 12px;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 3px 5px;
+    margin: 7px 10px;
+    border: transparent;
+    border-radius: 50%;
+    background-color: rgb(255, 0, 0);
+    cursor: pointer;
+}
+.swapi-board_card-title {
+    text-transform: uppercase;
+    text-align: center;
+    margin: 25px 0 20px;
+    letter-spacing: 1px;
+}
+.swapi-board__card-text {
+    margin: 0 25px 15px;
+    font-style: italic;
+}
